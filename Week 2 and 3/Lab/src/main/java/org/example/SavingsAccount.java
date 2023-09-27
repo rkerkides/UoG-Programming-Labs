@@ -11,4 +11,8 @@ public class SavingsAccount extends BankAccount{
     public void addInterest() {
         super.depositFunds(interestRate/100.0);
     }
+
+    public String toString() {
+        return "Different here!";
+    }
 }
