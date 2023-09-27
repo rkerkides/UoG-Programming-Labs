@@ -18,5 +18,11 @@ public class Main {
         var bank3 = new BankAccount(john);
         bank1.transferFunds(bank3, 4213.23);
         System.out.println(bank3 + " " + bank1);
+
+        var student = new Student("Mark", 13, 160, 3.6);
+        System.out.println(student);
+
+        var lecturer = new Lecturer("Chris", 45, 176, 65000.00);
+        System.out.println(lecturer.getSalary());
     }
 }
