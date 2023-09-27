@@ -24,5 +24,9 @@ public class Main {
 
         var lecturer = new Lecturer("Chris", 45, 176, 65000.00);
         System.out.println(lecturer.getSalary());
+
+        var savingsAccount = new SavingsAccount(john, 4.5);
+        savingsAccount.addInterest();
+        System.out.println(savingsAccount.getBalance());
     }
 }
