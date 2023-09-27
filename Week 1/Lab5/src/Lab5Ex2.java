@@ -7,8 +7,7 @@ public class Lab5Ex2 {
         String data = scanner.nextLine();
         Scanner secondScanner = new Scanner(data);
         String name = secondScanner.next();
-        String lastname = secondScanner.next();
         int age = secondScanner.nextInt();
-        System.out.println(name + age);
+        System.out.println(name);
     }
 }
