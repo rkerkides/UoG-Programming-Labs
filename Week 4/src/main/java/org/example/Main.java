@@ -30,12 +30,21 @@ public class Main {
         /*MultiDimensionalArray multiDimensionalArray = new MultiDimensionalArray(6, 6);
         int[][] arr2D = multiDimensionalArray.create2DArray();
         multiDimensionalArray.printArray(arr2D);*/
-        TicTacToe board = new TicTacToe();
+        /*TicTacToe board = new TicTacToe();
         board.printBoard();
-        board.play();
+        board.play();*/
 
-
-
+        Person[] people = new Person[4];
+        for (int i = 0; i < 4; i ++) {
+            people[i] = new Person("John", 24, 185);
+            people[0].addChild(new Person("Mark", 13, 160));
+        }
+        int sum = 0;
+        for (int i = 0; i < 4; i++) {
+            sum += people[i].getAge();
+        }
+        System.out.println(sum);
+        System.out.println(people[0]);
     }
 
     public static double averageOfDoubleArray(double[] arr) {
