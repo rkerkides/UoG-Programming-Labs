@@ -27,6 +27,14 @@ public class Main {
         for (int i = 0; i < occurrences.length; i++) {
             System.out.println(occurrences[i]);
         }*/
+        /*MultiDimensionalArray multiDimensionalArray = new MultiDimensionalArray(6, 6);
+        int[][] arr2D = multiDimensionalArray.create2DArray();
+        multiDimensionalArray.printArray(arr2D);*/
+        TicTacToe board = new TicTacToe();
+        board.printBoard();
+        board.play();
+
+
 
     }
 
