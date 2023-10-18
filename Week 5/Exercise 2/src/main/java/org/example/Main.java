@@ -1,18 +1,71 @@
 package org.example;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         FileReader fileReader = null;
         try {
+            String filePath = "src/main/resources/backwards.txt";
+            fileReader = new FileReader(filePath);
+            List<Character> characters = new ArrayList<>();
+            try {
+                int position = 0;
+                FileWriter fileWriter = new FileWriter("src/main/resources/forwards.txt");
+                int ch;
+                while ((ch = fileReader.read()) != -1) {
+                    characters.add(position, (char) ch);
+                    position++;
+                }
+                System.out.println(position);
+                for (int i = position - 1; i >= 0; i--) {
+                    fileWriter.append(characters.get(i));
+                }
+                fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fileReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void part1(FileReader fileReader) {
+        try {
+            String filePath = "src/main/resources/dolphin.txt";
+            fileReader = new FileReader(filePath);
+            Scanner scanner = new Scanner(fileReader);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fileReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void part2(FileReader fileReader) {
+        try {
             String filePath = "src/main/resources/sums.txt";
             fileReader = new FileReader(filePath);
             Scanner scanner = new Scanner(fileReader);
+
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] tokens = line.split(" ");
@@ -37,27 +90,6 @@ public class Main {
                     e.printStackTrace();
                 }
 
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fileReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public static void part1(FileReader fileReader) {
-        try {
-            String filePath = "src/main/resources/dolphin.txt";
-            fileReader = new FileReader(filePath);
-            Scanner scanner = new Scanner(fileReader);
-
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                System.out.println(line);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
