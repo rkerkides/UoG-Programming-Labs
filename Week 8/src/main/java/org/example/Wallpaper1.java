@@ -6,25 +6,27 @@ import javax.swing.*;
 public class Wallpaper1 extends JFrame {
     public Wallpaper1() {
 // the usual JFrame stuff
-        final int UNIT = 20;
+        final int small = 10;
+        final int medium = 25;
+        final int large = 40;
         this.setLocation(20, 20);
-        this.setTitle("Wallpaper1");
-        this.setSize(30 * UNIT, 30 * UNIT);
+        this.setTitle("Battleships");
+        this.setSize(30 * large, 30 * large);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new GridLayout(3, 2));
 // add FilledPanels to each position in the grid
-        this.add(new TripleFilledPanel(UNIT, UNIT, UNIT, UNIT,
-                Color.red, Color.white, UNIT, UNIT, UNIT, UNIT, Color.white, Color.green));
-        this.add(new TripleFilledPanel(UNIT, UNIT, UNIT, UNIT,
-                Color.white, Color.green, UNIT, UNIT, UNIT, UNIT, Color.green, Color.blue));
-        this.add(new TripleFilledPanel(UNIT, UNIT, UNIT, UNIT,
-                Color.green, Color.blue, UNIT, UNIT, UNIT, UNIT, Color.blue, Color.yellow));
-        this.add(new TripleFilledPanel(UNIT, UNIT, UNIT, UNIT,
-                Color.blue, Color.yellow, UNIT, UNIT, UNIT, UNIT, Color.yellow, Color.cyan));
-        this.add(new TripleFilledPanel(UNIT, UNIT, UNIT, UNIT,
-                Color.yellow, Color.cyan, UNIT, UNIT, UNIT, UNIT, Color.cyan, Color.red));
-        this.add(new TripleFilledPanel(UNIT, UNIT, UNIT, UNIT,
-                Color.cyan, Color.red, UNIT, UNIT, UNIT, UNIT, Color.red, Color.white));
+        this.add(new TripleFilledPanel(small, small, small, small,
+                Color.black, Color.black, small, small, small, small, Color.gray, Color.gray));
+        this.add(new TripleFilledPanel(small, small, small, small,
+                Color.black, Color.black, small, small, small, small, Color.gray, Color.gray));
+        this.add(new TripleFilledPanel(small, small, small, small,
+                Color.black, Color.black, small, small, small, small, Color.gray, Color.gray));
+        this.add(new TripleFilledPanel(medium, medium, medium, medium,
+                Color.black, Color.black, medium, medium, medium, medium, Color.gray, Color.gray));
+        this.add(new TripleFilledPanel(medium, medium, medium, medium,
+                Color.black, Color.black, medium, medium, medium, medium, Color.gray, Color.gray));
+        this.add(new TripleFilledPanel(large, large, large, large,
+                Color.black, Color.black, large, large, large, large, Color.gray, Color.gray));
     }
 
     public static void main(String[] args) {
