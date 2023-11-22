@@ -5,6 +5,7 @@ public class Main {
         int[] array = {1, 2, 3};
         System.out.println(addUpArray(array, 0, array.length - 2));
         System.out.println(fibonacciNumber(12));
+        printBinarySequences(3, 2, "", 0);
     }
 
     public static int addUpArray(int[] array, int i, int j) {
@@ -19,5 +20,20 @@ public class Main {
             return n;
         }
         return fibonacciNumber(n - 1) + fibonacciNumber(n - 2);
+    }
+
+    public static void printBinarySequences(int n, int m, String sequence, int numOnes) {
+        if (sequence.length() == n) {
+            if (numOnes == m) {
+                System.out.println(sequence);
+            }
+            return;
+        }
+
+        if (numOnes < m) {
+            printBinarySequences(n, m, sequence + "1", numOnes + 1);
+        }
+
+        printBinarySequences(n, m, sequence + "0", numOnes);
     }
 }
